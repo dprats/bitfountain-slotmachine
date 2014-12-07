@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupContainerViews()
+        setupFirstContainer(self.firstContainer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +58,19 @@ class ViewController: UIViewController {
 
         self.fourthContainer.backgroundColor = UIColor.blackColor()
         self.view.addSubview(fourthContainer)
+    }
+    
+    func setupFirstContainer(containerView: UIView){
+        self.titleLabel = UILabel()
+        self.titleLabel.text = "Super Slots"
+        self.titleLabel.textColor = UIColor.yellowColor()
+        self.titleLabel.font = UIFont(name: "MarkerFelt-wide", size : 40)
+        self.titleLabel.sizeToFit()
+        self.titleLabel.center = containerView.center
+        containerView.addSubview(self.titleLabel)
+        
+        
+        
     }
 
 }
