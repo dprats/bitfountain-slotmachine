@@ -54,11 +54,19 @@ class ViewController: UIViewController {
         setupFirstContainer(self.firstContainer)
         setupSecondContainer(self.secondContainer)
         setupThirdContainer(self.thirdContainer)
+        setupFourthContainer(self.fourthContainer)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //IBActions
+    
+    func resetButtonPressed(button: UIButton){
+        println("resentButtonPressed")
+        
     }
 
     func setupContainerViews(){
@@ -188,6 +196,9 @@ class ViewController: UIViewController {
 //        self.resetButton.titleLabel?.font = UIFont("Superclarendon-Bold", size: 12)
         self.resetButton.backgroundColor = UIColor.lightGrayColor()
         self.resetButton.sizeToFit()
+        self.resetButton.center = CGPoint(x: containerView.frame.width * kEighth, y: containerView.frame.height * kHalf)
+        self.resetButton.addTarget(self, action: "resetButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        containerView.addSubview(self.resetButton)
         
     }
 
