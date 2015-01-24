@@ -26,16 +26,17 @@ class Factory {
             
             for var slotNumber = 0; slotNumber < kNumberOfSlots; ++slotNumber{
                 
-                var slot = Slot(value: 0, image: UIImage(named: ""), isRed: true)
+                var slot = Factory.createSlot(slotArray)
                 slotArray.append(slot)
             }
             slots.append(slotArray)
             
             }
         
-        return [[]]
+        return slots
         
     }
+    
     
     //this function accepts the current cards so that there are no repeat cards in the slot
     class func createSlot (currentCards: [Slot]) -> Slot {
